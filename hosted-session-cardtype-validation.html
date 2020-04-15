@@ -79,7 +79,7 @@ pre {
                         <div class="form-group has-success">
                             <label for="cc-name" class="control-label mb-1">Name on card</label>
                             <input type="text" id="cardholder-name" class="input-field form-control cc-name" title="cardholder name" aria-label="enter name on card"  tabindex="3" readonly>
-                            <span class="invalid-feedback">Enter the name as shown on credit card</span>
+
                         </div>
 
                         <div>Expiry Month 
@@ -139,10 +139,9 @@ pre {
                         </div>
                         
                         <div>
-                            <button id="payment-button" onclick="pay()" class="btn btn-lg btn-info btn-block">
+                            <button id="payment-button" onclick="updateSession()" class="btn btn-lg btn-info btn-block">
                                 <i class="fa fa-lock fa-lg"></i>&nbsp;
-                                <span id="payment-button-amount">Pay</span>
-                                <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                <span id="payment-button-amount">Update Session</span>
                             </button>
                         </div>
                 </div>
@@ -287,7 +286,7 @@ PaymentSession.onBlur(['card.number'], function() {
     //handle change event
 });
 
-function pay() {
+function updateSession() {
 // UPDATE THE SESSION WITH THE INPUT FROM HOSTED FIELDS
 //PaymentSession.updateSessionFromForm('card', undefined,"card-number");
 PaymentSession.updateSessionFromForm('card', undefined,"cvv-date");
