@@ -279,7 +279,7 @@ interaction: {
 }
 
 
-PaymentSession.onBlur(['card.number'], function() {
+PaymentSession.onMouseOut(['card.number'], function() {
      console.log("card.number field changed");
 
     PaymentSession.updateSessionFromForm("card", undefined,'card-number');
