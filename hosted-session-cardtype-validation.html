@@ -164,14 +164,17 @@ var sessions = [];
 
 
   PaymentSession.configure({
- 
-    fields: {
+ 	
+	  order: {
+		  owningEntity: "MERCHANT_1234" 
+	  	},
+    	fields: {
           // ATTACH HOSTED FIELDS TO YOUR PAYMENT PAGE FOR A CREDIT CARD
-          card: {
-            number: "#card-number"
+          	card: {
+            		number: "#card-number"
 
-          }
-        },
+          		}
+       		},
         frameEmbeddingMitigation: ["javascript"],
         callbacks: {
  		initialized: function(response) {
