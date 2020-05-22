@@ -154,7 +154,7 @@ pre {
 </code>
 <!-- JAVASCRIPT FRAME-BREAKER CODE TO PROVIDE PROTECTION AGAINST IFRAME CLICK-JACKING -->
 <script type="text/javascript">
-if (self.location.hostname === top.location.hostname) {
+if (self === top) {
     var antiClickjack = document.getElementById("antiClickjack");
     antiClickjack.parentNode.removeChild(antiClickjack);
 } else {
