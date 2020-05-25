@@ -274,7 +274,13 @@ interaction: {
    	if ("ok" == response.status) {
         console.log("Session updated with data: " + response.session.id);
         var sessionId = response.session.id;
-        
+                if (response.sourceOfFunds.provided.card.securityCode) {
+         console.log("valid CVV was provided.");
+        }
+        else {
+            console.log("no CVV provided.");
+            document.getElementById("cvv-invalid").setAttribute("class", "alert alert-danger visible");
+        }
 
          
         }
