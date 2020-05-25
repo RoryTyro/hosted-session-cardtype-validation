@@ -296,7 +296,7 @@ PaymentSession.onBlur(['card.number'], function() {
     //handle card number change event
 });
 
-PaymentSession.onBlur(['card.secutityCode'], function() {
+PaymentSession.onChange(['card.secutityCode'], function() {
      console.log("card.securityCode field changed");
 
     PaymentSession.updateSessionFromForm("card", undefined,'cvv-date');
