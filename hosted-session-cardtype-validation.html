@@ -289,11 +289,18 @@ interaction: {
 }
 
 
-PaymentSession.onMouseOut(['card.number'], function() {
+PaymentSession.onBlur(['card.number'], function() {
      console.log("card.number field changed");
 
     PaymentSession.updateSessionFromForm("card", undefined,'card-number');
-    //handle change event
+    //handle card number change event
+});
+
+PaymentSession.onBlur(['card.secutityCode'], function() {
+     console.log("card.securityCode field changed");
+
+    PaymentSession.updateSessionFromForm("card", undefined,'cvv-date');
+    //handle cvv change event
 });
 
 function updateSession() {
