@@ -129,7 +129,7 @@ pre {
                                 <label class="control-label mb-1">Security code</label>
                                 <div class="input-group">
                                     <input type="text" id="security-code" class="input-field form-control cc-cvc" title="security code" aria-label="three digit CCV security code" value="" tabindex="4" readonly>
-                                    <div id="card-invalid" class="invisible" role="alert">
+                                    <div id="cvv-invalid" class="invisible" role="alert">
                                             Please enter a valid CCV
                                     </div>
                                         </div>
@@ -268,7 +268,7 @@ interaction: {
 
   function dateAndCvvResponse(response) {
          console.log("cvv response: " + JSON.stringify(response));
-         document.getElementById("response").innerText = JSON.stringify(response);
+
 	// HANDLE RESPONSE FOR UPDATE SESSION
  	if (response.status) {
    	if ("ok" == response.status) {
@@ -276,6 +276,7 @@ interaction: {
         var sessionId = response.session.id;
                 if (response.sourceOfFunds.provided.card.securityCode) {
          console.log("valid CVV was provided.");
+	document.getElementById("response").innerText = JSON.stringify(response);
         }
         else {
             console.log("no CVV provided.");
