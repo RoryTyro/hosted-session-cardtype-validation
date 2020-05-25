@@ -301,7 +301,7 @@ PaymentSession.onBlur(['card.secutityCode'], function() {
 
     PaymentSession.updateSessionFromForm("card", undefined,'cvv-date');
     //handle cvv change event
-}, "cvv-date");
+}, ["cvv-date"]);
 
 function updateSession() {
 // UPDATE THE SESSION WITH THE INPUT FROM HOSTED FIELDS
