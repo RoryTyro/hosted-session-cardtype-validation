@@ -54,7 +54,7 @@ pre {
 
 <!-- CREATE THE HTML FOR THE PAYMENT PAGE -->
 
-<button type="button" onClick="parent.doAFunction()" >do A function</button>
+<button type="button" onClick="sendAFunction()" >do A function</button>
 <div class="container-fluid py-3">
     <div class="row">
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 mx-auto">
@@ -153,6 +153,22 @@ pre {
 </code>
 <!-- JAVASCRIPT FRAME-BREAKER CODE TO PROVIDE PROTECTION AGAINST IFRAME CLICK-JACKING -->
 <script type="text/javascript">
+	
+function sendAfunction(){
+
+	    window.addEventListener('message', function (e) {
+        // check message origin
+        if ( e.origin === 'http://www.example.com' ) {
+            var task = e.data['task']; // task received in postMessage
+            // get reference to iframe window
+
+
+                    doAFunction();
+	}
+                
+        
+    }, false);
+}
 
 var sessions = [];
 
