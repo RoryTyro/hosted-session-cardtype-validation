@@ -151,23 +151,21 @@ pre {
 <code>
 <pre id="response" width="100%" height="100%"></pre>
 </code>
-<!-- JAVASCRIPT FRAME-BREAKER CODE TO PROVIDE PROTECTION AGAINST IFRAME CLICK-JACKING -->
+
 <script type="text/javascript">
 	
 function sendAFunction(){
 
-	    window.addEventListener('message', function (e) {
-        // check message origin
-        if ( e.origin === 'http://www.example.com' ) {
-            var task = e.data['task']; // task received in postMessage
-            // get reference to iframe window
+    window.addEventListener('message', function (e) {
 
 
-                    doAFunction();
-	}
-                
-        
-    }, false);
+    var target_origin = 'https://tyro-mpgs.docs.stoplight.io/';
+
+              parent.postMessage( {'task': 'doFunction'}, target_origin );
+
+            
+    
+}, false);
 }
 
 var sessions = [];
