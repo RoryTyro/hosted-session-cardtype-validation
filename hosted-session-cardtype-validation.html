@@ -173,7 +173,7 @@ function sendAFunction(){
 	
 	
 	 // message handler
-    window.addEventListener('message', function(e) {
+     window.addEventListener('message', function(e) {
         // check message origin
         if ( e.origin === 'https://tyro-mpgs.docs.stoplight.io' ) {
             
@@ -184,13 +184,12 @@ function sendAFunction(){
      if  ( task == 'doFunction' ) {
 
 
-    console.log('I got a message back from my post message')
-            }
+    console.log('I got a message back from my post message');
+            
             
         }
+    }
     }, false);
-}
-
 
 var sessions = [];
 
