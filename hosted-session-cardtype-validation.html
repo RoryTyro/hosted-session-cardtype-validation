@@ -159,9 +159,10 @@ function sendAFunction(){
     window.addEventListener('message', function (e) {
 
 
-    var target_origin = 'https://tyro-mpgs.docs.stoplight.io/';
+    var target_origin = 'https://tyro-mpgs.docs.stoplight.io';
 
               parent.postMessage( {'task': 'doFunction'}, target_origin );
+	    console.log('sending message');
 
             
     
