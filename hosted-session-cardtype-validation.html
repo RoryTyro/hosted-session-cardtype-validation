@@ -236,11 +236,11 @@ var sessions = [];
         document.getElementById("card-number").setAttribute("class", "form-control cc-number identified mastercard border-success");
        }
        if (response.sourceOfFunds.provided.card.scheme == 'VISA') {
-        console.log("The user entered a Mastercard credit card.")
+        console.log("The user entered a Visa credit card.")
         document.getElementById("card-number").setAttribute("class", "form-control cc-number identified visa border-success");
        }
        if (response.sourceOfFunds.provided.card.scheme == 'AMEX') {
-        console.log("The user entered a Mastercard credit card.")
+        console.log("The user entered a Amex credit card.")
         document.getElementById("card-number").setAttribute("class", "form-control cc-number identified amex border-success");
        }
         } else if ("fields_in_error" == response.status)  {
