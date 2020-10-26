@@ -2,7 +2,7 @@
 <head>
 <!-- INCLUDE SESSION.JS JAVASCRIPT LIBRARY -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://test-tyro.mtf.gateway.mastercard.com/form/version/55/merchant/TYRO_318/session.js"></script>
+<script src="https://test-tyro.mtf.gateway.mastercard.com/form/version/58/merchant/TYRO_318/session.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -153,42 +153,6 @@ pre {
 
 <script type="text/javascript">
 	
-function sendAFunction(){
-
-    window.addEventListener('message', function (e) {
-
-
-    var target_origin = 'https://tyro-mpgs.docs.stoplight.io';
-
-              parent.postMessage( {'task': 'doFunction'}, target_origin );
-	    console.log('sending message');
-
-            
-    
-}, false);
-}
-
-	
-	
-	
-	 // message handler
-     window.addEventListener('message', function(e) {
-        // check message origin
-        if ( e.origin === 'https://tyro-mpgs.docs.stoplight.io' ) {
-            
-            var task = e.data['task']; // task received in postMessage
-            // get reference to demo form
-            var form = document.getElementById('iframeDemoForm');
-            
-     if  ( task == 'doFunction' ) {
-
-
-    console.log('I got a message back from my post message');
-            
-            
-        }
-    }
-    }, false);
 
 var sessions = [];
 
@@ -318,7 +282,21 @@ interaction: {
     }
 }
 
-
+PaymentSession.onCardTypeChange(function(selector, result) {
+    //handle change event
+    if (result.status === 'SUPPORTED') {
+        // use card details like brand, fundingMethod, issuer and scheme
+        console.log(result.brand);
+        console.log(result.fundingMethod);
+        console.log(result.issuer);
+        console.log(result.scheme);
+    } else if (result.status === 'INSUFFICIENT_LENGTH') {
+        // selector for invalid field is provided
+        console.log('Minimum of 10 digits required to determine card type.');
+    } else if (result.status === 'NOT_SUPPORTED') {
+        console.log('The card type you entered is not supported.');
+    }
+});
 PaymentSession.onBlur(['card.number'], function() {
      console.log("card.number field changed");
 
