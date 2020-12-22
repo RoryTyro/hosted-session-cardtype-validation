@@ -2,7 +2,7 @@
 <head>
 <!-- INCLUDE SESSION.JS JAVASCRIPT LIBRARY -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://test-tyro.mtf.gateway.mastercard.com/form/version/58/merchant/TYRO_318/session.js"></script>
+<script src="https://test-tyro.mtf.gateway.mastercard.com/form/version/57/merchant/TYRO_318/session.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -66,20 +66,6 @@ pre {
             <div class="card">
                 <div class="card-body">
                         <div class="form-group">
-                            
-                            <h4>Do not use a real card</h4>
-                            <label for="nameoncard">Name on Card</label>
-                            <input type="text" id="nameoncard" name="nameoncard" autocomplete="cc-name">
-                            <label for="ccnumber">Credit Card Number</label>
-                            <input type="tel" id="cardNumber" name="ccnumber" autocomplete="cc-number"
-                            <label for="cc-exp-month">Expiration Month</label>
-                            <input type="number" id="cc-exp-month" name="cc-exp-month" autocomplete="cc-exp-month">
-                            <label for="cc-exp-year">Expiration Year</label>
-                            <input type="number" id="cc-exp-year" name="cc-exp-year" autocomplete="cc-exp-year">
-                            <label for="cvv2">CVV</label>
-                            <input type="text" id="cvv2" name="cvv2" autocomplete="cc-csc">
-                            
-                            
                             <label for="cc-number" class="control-label mb-1">Card number</label>
                             <input  type="tel"  id="card-number" class="input-field cc-number form-control invalidFieldCharacters" title="card number" aria-label="enter your card number" value="" tabindex="1" autocomplete="cc-number" readonly>
                             <div id="card-invalid" class="invisible" role="alert">
@@ -228,7 +214,7 @@ pre {
            }
     });
     
-    
+  /*  
     PaymentSession.onCardTypeChange(function(selector, result) {
       //handle change event
       if (result.status === 'SUPPORTED') {
@@ -263,7 +249,7 @@ pre {
       
       }
     });
-    
+    */
     
     
     function updateSession() {
