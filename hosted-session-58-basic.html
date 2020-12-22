@@ -8,9 +8,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <style>
     
-    * {
-        -webkit-touch-callout: none;
-    }
 	
 pre {
   white-space: pre-wrap;
@@ -67,18 +64,27 @@ pre {
                         <div class="form-group">
                             <label for="cc-number" class="control-label mb-1">Card number</label>
                             <input  type="tel"  id="card-number" class="input-field cc-number form-control invalidFieldCharacters" title="card number" aria-label="enter your card number" value="" tabindex="1" autocomplete="cc-number" readonly>
+                                
                             <div id="card-invalid" class="invisible" role="alert">
                                     Please enter a valid card
                             </div>
                         </div>
                         <div class="form-group has-success">
+                            
+                            <label for="nameoncard">Name on Card</label>
+                            <input type="text" id="nameoncard" name="nameoncard" autocomplete="cc-name">
+                                
                             <label for="cc-name" class="control-label mb-1">Name on card</label>
-                            <input type="text" id="cardholder-name" class="input-field form-control cc-name" title="cardholder name" aria-label="enter name on card"  tabindex="3" readonly>
-
-                        </div>
+                            <input type="text" id="cardholder-name"
+                                name="nameoncard" autocomplete="cc-name"
+                                class="input-field form-control cc-name" title="cardholder name" aria-label="enter name on card"  tabindex="3" readonly></div>
+                        
+                        
 
                         <div>Expiry Month 
-                                <select id="expiry-month" class="form-control input-md" required="" readonly>
+                                <select id="expiry-month" class="form-control input-md"
+                                    name="cc-exp-month" autocomplete="cc-exp-month"
+                                    required="" readonly>
                                     <option value="">Select Month</option>
                                     <option value="01">January</option>
                                     <option value="02">February</option>
@@ -103,7 +109,9 @@ pre {
 
                           </div>
                           <div>Expiry Year 
-                                <select id="expiry-year" class="form-control input-md" required="" readonly>
+                                <select id="expiry-year" class="form-control input-md"
+                            name="cc-exp-year"autocomplete="cc-exp-year"
+                                    required="" readonly>
                                     <option value="">Select Year</option>
                                     <option>20</option>
                                     <option>21</option>
@@ -123,7 +131,9 @@ pre {
                             <div class="col-6">
                                 <label class="control-label mb-1">Security code</label>
                                 <div class="input-group">
-                                    <input type="text" id="security-code" class="input-field form-control cc-cvc" title="security code" aria-label="three digit CCV security code" value="" tabindex="4" readonly>
+                                    <input type="text" id="security-code" class="input-field form-control cc-cvc" title="security code" aria-label="three digit CCV security code"
+                                        name="cvv2" autocomplete="cc-csc">
+                                        value="" tabindex="4" readonly>
                                     <div id="card-invalid" class="invisible" role="alert">
                                             Please enter a valid CCV
                                     </div>
