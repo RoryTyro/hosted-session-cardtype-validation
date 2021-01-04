@@ -2,7 +2,6 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
 
@@ -13,22 +12,18 @@
       Pay with card
     </div>
     <div class="card-body">
-
-
-
-
-      <form method="post" id="paymentForm">
+     
         <div class="form-row">
           <div class="form-group col-md">
             <label for="nameoncard">Name on Card</label>
-            <input class="form-control" type="text" id="nameoncard" name="nameoncard" autocomplete="cc-name">
+            <input class="form-control shadow-sm" type="text" id="nameoncard" name="nameoncard" autocomplete="cc-name" readonly>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md">
             <label for="ccnumber">Card Number</label>
-            <input class="form-control" type="tel" id="ccnumber" name="ccnumber" autocomplete="cc-number">
+            <input class="form-control shadow-sm" type="tel" id="ccnumber" name="ccnumber" autocomplete="cc-number" readonly>
           </div>
         </div>
 
@@ -37,7 +32,7 @@
             <div class="input-group-prepend">
               <label for="cc-exp-month">Month</label>
             </div>
-            <select class="custom-select" id="cc-exp-month" name="cc-exp-month" autocomplete="cc-exp-month">
+            <select class="custom-select shadow-sm" id="cc-exp-month" name="cc-exp-month" autocomplete="cc-exp-month" readonly>
               <option value="">Select Month</option>
               <option value="01">January</option>
               <option value="02">February</option>
@@ -58,7 +53,7 @@
             <div class="input-group-prepend">
               <label for="cc-exp-year">Select Year</label>
             </div>
-            <select class="custom-select" type="number" id="cc-exp-year" name="cc-exp-year" autocomplete="cc-exp-year">
+            <select class="custom-select shadow-sm" type="number" id="cc-exp-year" name="cc-exp-year" autocomplete="cc-exp-year" readonly>
               <option value="">Select Year</option>
               <option>20</option>
               <option>21</option>
@@ -78,18 +73,20 @@
 
           <div class="form-group col-md">
             <label for="cvv2">CVV</label>
-            <input class="form-control" type="text" id="cvv2" name="cvv2" autocomplete="off">
+            <input class="form-control shadow-sm" type="text" id="cvv2" name="cvv2" autocomplete="off" readonly>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary ">Pay</button>
-      </form>
+        <button id="payment-button" onclick="updateSession()" class="btn btn-primary col-md shadow-sm">Pay</button>
 
     </div>
     <div class="card-footer text-muted">
-      Powered by "a payments company"
+      Powered by 
+      <img class="card-img" src="https://2n18ua1tyz6r3kfqtckmdy45-wpengine.netdna-ssl.com/wp-content/uploads/2019/07/TYRO_Logo_POS_RGB-2.png" alt="Card image cap" style="width: 50px;height: auto;">
     </div>
   </div>
 
+<script src="https://test-tyro.mtf.gateway.mastercard.com/form/version/58/merchant/TYRO_318/session.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
