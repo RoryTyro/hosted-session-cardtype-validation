@@ -16,14 +16,14 @@
         <div class="form-row">
           <div class="form-group col-md">
             <label for="nameoncard">Name on Card</label>
-            <input class="form-control shadow-sm" type="text" id="nameoncard" name="nameoncard" autocomplete="cc-name" readonly>
+            <input class="form-control shadow-sm" type="text" id="nameoncard" name="nameoncard" autocomplete="cc-name">
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md">
             <label for="ccnumber">Card Number</label>
-            <input class="form-control shadow-sm" type="tel" id="ccnumber" name="ccnumber" autocomplete="cc-number" readonly>
+            <input class="form-control shadow-sm" type="tel" id="ccnumber" name="ccnumber" autocomplete="cc-number">
           </div>
         </div>
 
@@ -32,7 +32,7 @@
             <div class="input-group-prepend">
               <label for="cc-exp-month">Month</label>
             </div>
-            <select class="custom-select shadow-sm" id="cc-exp-month" name="cc-exp-month" autocomplete="cc-exp-month" readonly>
+            <select class="custom-select shadow-sm" id="cc-exp-month" name="cc-exp-month" autocomplete="cc-exp-month">
               <option value="">Select Month</option>
               <option value="01">January</option>
               <option value="02">February</option>
@@ -53,7 +53,7 @@
             <div class="input-group-prepend">
               <label for="cc-exp-year">Select Year</label>
             </div>
-            <select class="custom-select shadow-sm" type="number" id="cc-exp-year" name="cc-exp-year" autocomplete="cc-exp-year" readonly>
+            <select class="custom-select shadow-sm" type="number" id="cc-exp-year" name="cc-exp-year" autocomplete="cc-exp-year">
               <option value="">Select Year</option>
               <option>20</option>
               <option>21</option>
@@ -73,7 +73,7 @@
 
           <div class="form-group col-md">
             <label for="cvv2">CVV</label>
-            <input class="form-control shadow-sm" type="text" id="cvv2" name="cvv2" autocomplete="off" readonly>
+            <input class="form-control shadow-sm" type="text" id="cvv2" name="cvv2" autocomplete="off">
           </div>
         </div>
         <button id="payment-button" onclick="updateSession()" class="btn btn-primary col-md shadow-sm">Pay</button>
