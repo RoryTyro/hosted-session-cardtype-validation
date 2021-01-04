@@ -49,23 +49,29 @@
 
 <body>
 
-  <div class="card">
-    <div class="card-header">
+  <div id="container" class="mx-auto p-3"></div>
+<span  class="p-3"> </span>
+  <div class="card mx-auto">
+ 
+
+  
+    <div class="card-header mt-0">
+    
       Pay with card
     </div>
     <div class="card-body">
-     
+    
         <div class="form-row">
           <div class="form-group col-md">
             <label for="nameoncard">Name on Card</label>
-            <input class="form-control shadow-sm" type="text" id="nameoncard" autocomplete="cc-name" value="" readonly>
+            <input class="form-control inputs shadow-sm" type="text" id="nameoncard" autocomplete="cc-name" value="" readonly>
           </div>
         </div>
 
         <div class="form-row">
           <div class="form-group col-md">
             <label for="ccnumber">Card Number</label>
-            <input class="form-control shadow-sm" type="tel" id="ccnumber" autocomplete="cc-number" readonly>
+            <input class="form-control shadow-sm" type="tel" id="ccnumber" autocomplete="cc-number" maxlength="4" readonly>
           </div>
         </div>
 
@@ -127,12 +133,12 @@
     </div>
   </div>
 
-<div> Session response: </div>
-<code>
-<pre id="response" width="100%" height="100%"></pre>
-</code>
-<div> Session ID: </div>
-<span id="sessionId"></span>
+<script async
+  src="https://pay.google.com/gp/p/js/pay.js"
+  onload="onGooglePayLoaded()"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+
 <script>
 var sessions = [];
 
